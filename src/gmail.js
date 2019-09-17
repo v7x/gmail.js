@@ -3432,9 +3432,19 @@ var Gmail = function(localJQuery) {
            Retrieve the current "cc" recipients
         */
         cc: function(cc) {
-            return this.dom("cc").val(cc);
+            return ;
         },
-
+        
+        /**
+           Add recipients to the "cc" field.
+        */
+        addcc: function(recips) {
+            if (Array.isArray(recips)) {
+                var newcc = this.dom.cc();
+                newcc.concat(recips);
+                this.dom("cc").val(newcc);
+            }
+        },
         /**
            Retrieve the current "bcc" recipients
         */
@@ -3442,6 +3452,16 @@ var Gmail = function(localJQuery) {
             return this.dom("bcc").val(bcc);
         },
 
+        /**
+           Add recipients to the "bcc" field.
+        */
+        addbcc: function(recips) {
+            if (Array.isArray(recips)) {
+                var newbcc = this.dom.bcc();
+                newbcc.concat(recips);
+                this.dom("bcc").val(newbcc);
+            }
+        },
         /**
            Get/Set the current subject
            Parameters:
