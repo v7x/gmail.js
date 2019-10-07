@@ -1115,7 +1115,9 @@ Compose methods:
   - *.flat* - boolean if `true` will just return an array of all recipients instead of splitting out into to, cc, and bcc
 - **.to()** - retrieve the current `to` recipients
 - **.cc()** - retrieve the current `cc` recipients
+- **.addcc()** - Non-destructively add to the list of current `cc` recipients
 - **.bcc()** - retrieve the current `bcc` recipients
+- **.addbcc()** - Non-destructively add to the list of current `bcc` recipients
 - **.subject(subject)** - get/set the current subject
 - **.from()** - get the from email, if user only has one email account they can send from, returns that email address
 - **.body(body)** - get/set the email body
