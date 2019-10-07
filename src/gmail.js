@@ -3432,15 +3432,15 @@ var Gmail = function(localJQuery) {
            Retrieve the current "cc" recipients
         */
         cc: function(cc) {
-            return ;
+            return this.dom("cc").val(cc);
         },
         
         /**
-           Add recipients to the "cc" field.
+           Add recipients to the "cc" field. Addition is non-destructive.
         */
         addcc: function(recips) {
             if (Array.isArray(recips)) {
-                var newcc = this.dom.cc();
+                var newcc = this.cc();
                 newcc.concat(recips);
                 this.dom("cc").val(newcc);
             }
@@ -3453,11 +3453,11 @@ var Gmail = function(localJQuery) {
         },
 
         /**
-           Add recipients to the "bcc" field.
+           Add recipients to the "bcc" field. Addition is non-destructive.
         */
         addbcc: function(recips) {
             if (Array.isArray(recips)) {
-                var newbcc = this.dom.bcc();
+                var newbcc = this.bcc();
                 newbcc.concat(recips);
                 this.dom("bcc").val(newbcc);
             }
